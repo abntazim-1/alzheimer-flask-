@@ -16,8 +16,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})  # Allow all frontend requests
 
 # Load trained model
-MODEL_PATH = r"F:\Webapp\Alzheimer_model.h5"
-model = load_model(MODEL_PATH)
+model = load_model("Alzheimer_model.h5")
 
 # Define Alzheimer's stage names
 ALZHEIMERS_STAGE_NAMES = ['MildDemented', 'ModerateDemented', 'NonDemented', 'VeryMildDemented']
