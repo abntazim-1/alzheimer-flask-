@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn About Alzheimer's | AlzPredict</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -17px;
+        }
+        
+        .right::after {
+            left: -17px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+        }
+        
+        .infographic {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+        
+        .infographic-item {
+            flex: 1;
+            min-width: 250px;
+            margin: 15px;
+            padding: 25px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .infographic-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .infographic-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 15px;
+            }
+            
+            .left::after, .right::after {
+                left: 15px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .stages-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+        
+        .stages-timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .stage-item {
+            padding: 20px 40px 20px 80px;
+            position: relative;
+            background-color: #fff;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stage-number {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            left: 24px;
+            top: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            z-index: 1;
+            box-shadow: 0 0 0 5px white, 0 0 0 6px #e1e1e1;
+        }
+        
+        .stage-content {
+            padding: 10px 0;
+        }
+        
+        .stage-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .stage-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .stage-description h4 {
+            margin: 20px 0 10px;
+            color: #444;
+            font-size: 1.2rem;
+        }
+        
+        .stage-description ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .stage-description li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .care-tips {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin-top: 20px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .care-tips h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        .care-tips ul {
+            list-style-type: none;
+            padding-left: 5px;
+        }
+        
+        .care-tips li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .care-tips li::before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .stages-timeline::before {
+                left: 31px;
+            }
+            
+            .stage-item {
+                padding: 15px 15px 15px 70px;
+            }
+            
+            .stage-number {
+                width: 40px;
+                height: 40px;
+                left: 15px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AlzPredict</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">Learn About Alzheimer's</a></li>
+                    <li><a href="prediction-tool.html">Prediction Tool</a></li>
+                    <li><a href="success-stories.html">Success Stories</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Understanding Alzheimer's Disease</h2>
+                    <p>Learn about the symptoms, stages, and importance of early detection in managing Alzheimer's disease.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="pictures/rsz_brain_illustration_showing_alzheimers_effects.jpg" alt="Brain illustration showing Alzheimer's effects" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- What is Alzheimer's Section -->
+        <section class="about">
+            <div class="container">
+                <h2>What is Alzheimer's Disease?</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Alzheimer's disease is a progressive neurological disorder that causes brain cells to degenerate and die. It is the most common cause of dementia — a continuous decline in thinking, behavioral and social skills that affects a person's ability to function independently.</p>
+                        
+                        <p>The early signs of Alzheimer's include forgetting recent events or conversations. As the disease progresses, a person with Alzheimer's disease will develop severe memory impairment and lose the ability to carry out everyday tasks.</p>
+                        
+                        <p>Current Alzheimer's disease medications may temporarily improve symptoms or slow the rate of decline. These treatments can sometimes help people with Alzheimer's disease maximize function and maintain independence for a time. Different programs and services can help support people with Alzheimer's disease and their caregivers.</p>
+                        
+                        <p>There is no treatment that cures Alzheimer's disease or alters the disease process in the brain. In advanced stages of the disease, complications from severe loss of brain function — such as dehydration, malnutrition or infection — result in death.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="pictures/rsz_comparison_of_healthy_brain_vs_alzheimers_affected_brain.jpg" alt="Comparison of healthy brain vs Alzheimer's affected brain" width="500" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stages of Alzheimer's Section -->
+        <section class="stages">
+            <div class="container">
+                <h2>Stages of Alzheimer's Disease</h2>
+                <p class="section-intro">Alzheimer's disease typically progresses through distinct stages, each with characteristic symptoms and challenges. Early detection is crucial for effective management.</p>
+                
+                <div class="stages-timeline">
+                    <div class="stage-item">
+                        <div class="stage-number">1</div>
+                        <div class="stage-content">
+                            <h3>No Dementia</h3>
+                            <div class="stage-description">
+                                <p>At this stage, brain function is normal with no significant memory impairment or behavioral changes. Minor forgetfulness may be experienced but is generally associated with normal aging.</p>
+                                <h4>Key Symptoms:</h4>
+                                <ul>
+                                    <li>No significant memory problems</li>
+                                    <li>Normal cognitive abilities</li>
+                                    <li>Independent functioning in daily activities</li>
+                                    <li>May experience occasional forgetfulness but can recall later</li>
+                                </ul>
+                                <div class="care-tips">
+                                    <h4>Preventive Measures:</h4>
+                                    <ul>
+                                        <li>Maintain regular physical exercise</li>
+                                        <li>Engage in cognitive stimulation activities</li>
+                                        <li>Follow a healthy diet (Mediterranean diet recommended)</li>
+                                        <li>Manage cardiovascular risk factors</li>
+                                        <li>Stay socially active</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stage-item">
+                        <div class="stage-number">2</div>
+                        <div class="stage-content">
+                            <h3>Mild Cognitive Impairment (MCI)</h3>
+                            <div class="stage-description">
+                                <p>MCI involves minor changes in memory and thinking that are noticeable but do not significantly affect daily life. It may be an early sign of Alzheimer's, though not everyone with MCI develops dementia.</p>
+                                <h4>Key Symptoms:</h4>
+                                <ul>
+                                    <li>Increased forgetfulness beyond normal aging</li>
+                                    <li>Slight difficulty with problem-solving</li>
+                                    <li>Losing things more frequently</li>
+                                    <li>Difficulty finding the right word in conversation</li>
+                                    <li>May appear more anxious or withdrawn about memory difficulties</li>
+                                </ul>
+                                <div class="care-tips">
+                                    <h4>Care Approaches:</h4>
+                                    <ul>
+                                        <li>Regular cognitive assessments with healthcare provider</li>
+                                        <li>Memory exercises and cognitive training</li>
+                                        <li>Use of memory aids (notes, calendars, reminders)</li>
+                                        <li>Management of other health conditions</li>
+                                        <li>Discussing concerns with healthcare providers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stage-item">
+                        <div class="stage-number">3</div>
+                        <div class="stage-content">
+                            <h3>Early-Stage Alzheimer's</h3>
+                            <div class="stage-description">
+                                <p>This stage marks the beginning of dementia. Memory problems become more pronounced and start to impact daily functioning. Diagnosis often occurs during this stage as symptoms become clear to family members and healthcare providers.</p>
+                                <h4>Key Symptoms:</h4>
+                                <ul>
+                                    <li>Noticeable memory lapses, especially for recent events</li>
+                                    <li>Difficulty with planning and organization</li>
+                                    <li>Challenges with complex tasks like managing finances</li>
+                                    <li>Confusion about time and place</li>
+                                    <li>Personality changes, including withdrawal or irritability</li>
+                                    <li>Difficulty completing familiar tasks at home or work</li>
+                                </ul>
+                                <div class="care-tips">
+                                    <h4>Care Approaches:</h4>
+                                    <ul>
+                                        <li>Establishing consistent routines</li>
+                                        <li>Simplifying tasks and communication</li>
+                                        <li>Early legal and financial planning</li>
+                                        <li>Medication management</li>
+                                        <li>Safety assessments of the home environment</li>
+                                        <li>Support groups for both patient and caregivers</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stage-item">
+                        <div class="stage-number">4</div>
+                        <div class="stage-content">
+                            <h3>Moderate Alzheimer's</h3>
+                            <div class="stage-description">
+                                <p>At this stage, cognitive decline is significant, with increasing difficulty in daily functioning. Memory continues to deteriorate, and individuals require more assistance with daily activities.</p>
+                                <h4>Key Symptoms:</h4>
+                                <ul>
+                                    <li>Significant memory loss, including personal history</li>
+                                    <li>Difficulty recognizing family and friends</li>
+                                    <li>Impaired ability to learn new things</li>
+                                    <li>Significant confusion about time, place, and events</li>
+                                    <li>Increased anxiety, suspicion, or paranoia</li>
+                                    <li>Problems with language and communication</li>
+                                    <li>Need for help with personal care activities</li>
+                                    <li>Sleep disturbances and wandering behaviors</li>
+                                </ul>
+                                <div class="care-tips">
+                                    <h4>Care Approaches:</h4>
+                                    <ul>
+                                        <li>Comprehensive supervision and assistance</li>
+                                        <li>Structured daily routines</li>
+                                        <li>Adapting communication techniques</li>
+                                        <li>Managing behavioral changes with non-pharmacological approaches</li>
+                                        <li>Considering additional care options (adult day programs, in-home care)</li>
+                                        <li>Home modifications for safety</li>
+                                        <li>Regular medical follow-ups</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits of Early Detection Section -->
+        <section class="early-detection">
+            <div class="container">
+                <h2>Benefits of Early Detection</h2>
+                
+                <div class="infographic">
+                    <div class="infographic-item">
+                        <div class="infographic-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h3>Better Treatment Options</h3>
+                        <p>Early diagnosis allows for earlier treatment with medications that may help maintain independence longer and may slow symptom progression.</p>
+                    </div>
+                    <div class="infographic-item">
+                        <div class="infographic-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                        <h3>Future Planning</h3>
+                        <p>Early diagnosis gives people with dementia and their families more time to plan for the future while the person with dementia can still participate in decision-making.</p>
+                    </div>
+                    <div class="infographic-item">
+                        <div class="infographic-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Support Services</h3>
+                        <p>Early diagnosis allows individuals and families to connect with support services, resources, and education programs earlier in the disease process.</p>
+                    </div>
+                    <div class="infographic-item">
+                        <div class="infographic-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h3>Clinical Trials</h3>
+                        <p>Early diagnosis may provide the opportunity to participate in clinical trials that might offer medical benefits and contribute to research.</p>
+                    </div>
+                </div>
+                
+                <div class="center-btn">
+                    <a href="prediction-tool.html" class="btn btn-primary">Try Our Prediction Tool</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Factors Section -->
+        <section class="risk-factors" style="background-color: #f8f9fa;">
+            <div class="container">
+                <h2>Risk Factors and Prevention</h2>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="pictures/rsz_1lifestyle_factors_affecting_alzheimers_risk.jpg" alt="Lifestyle factors affecting Alzheimer's risk" width="500" height="400">
+                    </div>
+                    <div class="about-text">
+                        <h3>Risk Factors</h3>
+                        <ul style="margin-bottom: 20px;">
+                            <li><strong>Age:</strong> The greatest known risk factor is increasing age, with most people with Alzheimer's being 65 and older.</li>
+                            <li><strong>Family history and genetics:</strong> Your risk increases if a first-degree relative has the disease.</li>
+                            <li><strong>Down syndrome:</strong> Many people with Down syndrome develop Alzheimer's disease.</li>
+                            <li><strong>Head trauma:</strong> Past head trauma may increase future risk of Alzheimer's.</li>
+                            <li><strong>Poor sleep patterns:</strong> Poor sleep patterns, such as difficulty falling asleep or staying asleep, may result in developing Alzheimer's.</li>
+                        </ul>
+                        
+                        <h3>Prevention Strategies</h3>
+                        <ul>
+                            <li><strong>Physical exercise:</strong> Regular physical exercise may reduce the risk of Alzheimer's disease.</li>
+                            <li><strong>Healthy diet:</strong> A diet low in fat and rich in fruits and vegetables may reduce the risk.</li>
+                            <li><strong>Cognitive stimulation:</strong> Staying mentally and socially active may support brain health.</li>
+                            <li><strong>Cardiovascular health:</strong> Managing cardiovascular risk factors may help prevent Alzheimer's.</li>
+                            <li><strong>Quality sleep:</strong> Getting enough good quality sleep may help reduce the risk.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research and Advancements Section -->
+        <section class="research">
+            <div class="container">
+                <h2>Current Research and Advancements</h2>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Research into Alzheimer's disease has made remarkable strides in recent years. Scientists are exploring several promising areas of research to develop new treatments and improve diagnosis methods.</p>
+                        
+                        <h3>Diagnostic Advancements</h3>
+                        <p>Researchers are developing new diagnostic tools, including advanced brain imaging techniques, blood tests for biomarkers, and artificial intelligence algorithms that can detect subtle changes in brain function years before symptoms appear.</p>
+                        
+                        <h3>Treatment Research</h3>
+                        <p>Current research focuses on developing medications that target the underlying disease processes rather than just treating symptoms. This includes drugs that reduce amyloid plaques and tau tangles in the brain, as well as therapies that address inflammation and metabolic changes.</p>
+                        
+                        <h3>Lifestyle Interventions</h3>
+                        <p>Studies continue to explore how lifestyle factors like diet, exercise, cognitive training, and social engagement may help prevent or delay the onset of Alzheimer's disease.</p>
+                        
+                        <div class="center-btn" style="margin-top: 30px;">
+                            <a href="#" class="btn btn-secondary">Read Latest Research</a>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="pictures/Scientists researching Alzheimer's disease.jpg" alt="Scientists researching Alzheimer's disease" width="500" height="400">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AlzPredict</h2>
+                    <p>Early detection for better outcomes</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Alzheimer's</a></li>
+                            <li><a href="prediction-tool.html">Prediction Tool</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Research Papers</a></li>
+                            <li><a href="#">Video Lectures</a></li>
+                            <li><a href="#">Caregiver Guides</a></li>
+                            <li><a href="#">Statistics & Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AlzPredict. All rights reserved.</p>
+                <p>Disclaimer: This tool is not intended to replace professional medical advice, diagnosis, or treatment.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+

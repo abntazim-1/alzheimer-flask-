@@ -1,0 +1,16 @@
+{
+  "name": "alzheimer-prediction-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Alzheimer's Prediction System",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "vercel build",
+    "start": "vercel start"
+  },
+  "dependencies": {
+    "@vercel/static": "^1.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  }
+}

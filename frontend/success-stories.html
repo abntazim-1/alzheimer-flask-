@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories | AlzPredict</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .story-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .story-header {
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .story-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        
+        .story-title h3 {
+            margin: 0 0 5px 0;
+            color: var(--primary-color);
+        }
+        
+        .story-title p {
+            margin: 0;
+            color: var(--text-light);
+        }
+        
+        .story-content {
+            padding: 30px;
+        }
+        
+        .story-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .story-quote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--secondary-color);
+            opacity: 0.3;
+            position: absolute;
+            left: -10px;
+            top: -20px;
+        }
+        
+        .story-footer {
+            background-color: #f8f9fa;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .story-date {
+            color: var(--text-light);
+        }
+        
+        .story-actions a {
+            margin-left: 15px;
+            color: var(--primary-color);
+        }
+        
+        .video-story {
+            margin-bottom: 40px;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .video-caption {
+            margin-top: 15px;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .share-story {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .share-story h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .story-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .story-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AlzPredict</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">Learn About Alzheimer's</a></li>
+                    <li><a href="prediction-tool.html">Prediction Tool</a></li>
+                    <li><a href="success-stories.html" class="active">Success Stories</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Success Stories</h2>
+                    <p>Real stories from patients, caregivers, and healthcare professionals who have benefited from early detection and intervention.</p>
+                </div>
+                <div class="hero-image">
+                    <img src="pictures/rsz_group_of_people_sharing_experiences.jpg" alt="Group of people sharing experiences" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section class="stories">
+            <div class="container">
+                <h2>Patient and Caregiver Stories</h2>
+                
+                <!-- Story 1 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-image">
+                            <img src="pictures/rsz_robert_miller.jpg" alt="Robert Miller" width="200" height="200">
+                        </div>
+                        <div class="story-title">
+                            <h3>Robert Miller</h3>
+                            <p>Caregiver for his mother with Alzheimer's</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-quote">
+                            After my mother's early diagnosis, we were able to plan ahead and make important decisions together while she could still participate fully in the process.
+                        </div>
+                        <p>When my mother started showing subtle signs of memory loss, I was concerned but unsure what to do. A friend recommended the AlzPredict tool, which suggested she might be in the early stages of Alzheimer's. We immediately consulted with a neurologist who confirmed the diagnosis.</p>
+                        <p>The early detection made all the difference. We had time to discuss her care preferences, organize her legal and financial affairs, and explore treatment options that have helped slow the progression. Most importantly, my mother was able to be an active participant in these decisions.</p>
+                        <p>Three years later, she's still living at home with support, enjoying her garden and visits from her grandchildren. While we know what the future holds, the early diagnosis gave us precious time to prepare and make the most of every day.</p>
+                    </div>
+                    <div class="story-footer">
+                        <div class="story-date">
+                            <i class="far fa-calendar-alt"></i> Shared on June 15, 2023
+                        </div>
+                        <div class="story-actions">
+                            <a href="#" aria-label="Share story"><i class="fas fa-share-alt"></i> Share</a>
+                            <a href="#" aria-label="Read more"><i class="fas fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 2 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-image">
+                            <img src="pictures/rsz_1dr_sarah_johnson.jpg" alt="Dr. Sarah Johnson" width="200" height="200">
+                        </div>
+                        <div class="story-title">
+                            <h3>Dr. Sarah Johnson</h3>
+                            <p>Neurologist</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-quote">
+                            The early detection through this tool allowed us to start cognitive therapies and medication that significantly slowed the progression of symptoms in my patients.
+                        </div>
+                        <p>As a neurologist specializing in neurodegenerative disorders, I've seen firsthand how early intervention can change the trajectory of Alzheimer's disease. The AlzPredict tool has become an invaluable resource in my practice.</p>
+                        <p>One particular case stands out: a 67-year-old professor who used the tool after noticing minor difficulties with word recall. The prediction indicated early-stage Alzheimer's, which we confirmed through clinical assessment. We immediately started him on a comprehensive treatment plan including medication, cognitive exercises, lifestyle modifications, and regular monitoring.</p>
+                        <p>Two years later, his cognitive decline has been much slower than typically expected. He's still teaching part-time and has maintained his independence. This case exemplifies why I recommend early screening tools like AlzPredict to all my at-risk patients.</p>
+                    </div>
+                    <div class="story-footer">
+                        <div class="story-date">
+                            <i class="far fa-calendar-alt"></i> Shared on May 3, 2023
+                        </div>
+                        <div class="story-actions">
+                            <a href="#" aria-label="Share story"><i class="fas fa-share-alt"></i> Share</a>
+                            <a href="#" aria-label="Read more"><i class="fas fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video Story -->
+                <div class="video-story">
+                    <h3>Jennifer's Journey: From Diagnosis to Advocacy</h3>
+                    <div class="video-container">
+                        <!-- Placeholder for video - in a real implementation, this would be a YouTube embed -->
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Jennifer's Journey: From Diagnosis to Advocacy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-caption">
+                        Jennifer shares how early detection of Alzheimer's changed her approach to the disease and inspired her to become an advocate for others.
+                    </div>
+                </div>
+                
+                <!-- Story 3 -->
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-image">
+                            <img src="https://via.placeholder.com/200" alt="Michael and Susan Thompson" width="200" height="200">
+                        </div>
+                        <div class="story-title">
+                            <h3>Michael and Susan Thompson</h3>
+                            <p>Patient and Spouse</p>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <div class="story-quote">
+                            Knowledge is power. Early detection gave us time to prepare, adjust, and make the most of our retirement years together.
+                        </div>
+                        <p>When Michael retired at 65, we had big plans for travel and spending time with our grandchildren. During a routine health check, his doctor suggested using the AlzPredict tool as a preventive measure due to his family history of dementia.</p>
+                        <p>The results indicated mild cognitive impairment with a high risk of progression to Alzheimer's. After further medical evaluation confirmed these findings, we were initially devastated. However, we quickly realized that having this information early was actually a gift.</p>
+                        <p>We adjusted our retirement plans, prioritizing the trips we most wanted to take while Michael was still able to fully enjoy them. We moved to a single-level home closer to our children and set up legal and financial arrangements for the future.</p>
+                        <p>Michael started medication and cognitive therapy immediately, and three years later, his symptoms have progressed much more slowly than expected. We're still traveling, though we've modified how we do it, and we're making beautiful memories with our family every day.</p>
+                    </div>
+                    <div class="story-footer">
+                        <div class="story-date">
+                            <i class="far fa-calendar-alt"></i> Shared on August 22, 2023
+                        </div>
+                        <div class="story-actions">
+                            <a href="#" aria-label="Share story"><i class="fas fa-share-alt"></i> Share</a>
+                            <a href="#" aria-label="Read more"><i class="fas fa-arrow-right"></i> Read More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Share Your Story Section -->
+                <div class="share-story">
+                    <h3>Share Your Story</h3>
+                    <p>Has early detection of Alzheimer's made a difference in your life or the life of someone you care for? We'd love to hear your experience.</p>
+                    <a href="index.html#contact" class="btn btn-primary">Contact Us to Share</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>AlzPredict</h2>
+                    <p>Early detection for better outcomes</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Alzheimer's</a></li>
+                            <li><a href="prediction-tool.html">Prediction Tool</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Research Papers</a></li>
+                            <li><a href="#">Video Lectures</a></li>
+                            <li><a href="#">Caregiver Guides</a></li>
+                            <li><a href="#">Statistics & Data</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Disclaimer</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AlzPredict. All rights reserved.</p>
+                <p>Disclaimer: This tool is not intended to replace professional medical advice, diagnosis, or treatment.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
+
